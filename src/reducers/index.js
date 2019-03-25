@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import myReducer from "./myReducer";
-import displayCVReducer from "./displayCVReducer";
+import displayAboutMe from "./displayAboutMe";
+import displaySummary from "./displaySummary";
 
-export default combineReducers({ myReducer, displayCVReducer });
+export default combineReducers({ myReducer, displayAboutMe, displaySummary });

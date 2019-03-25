@@ -2,7 +2,7 @@ const initialState = {
   show: false
 };
 
-const displayCVReducer = (state = initialState, action) => {
+const displayAboutMe = (state = initialState, action) => {
   switch (action.type) {
     case "SHOWTHETHING":
       return {
@@ -15,4 +15,4 @@ const displayCVReducer = (state = initialState, action) => {
   }
 };
 
-export default displayCVReducer;
+export default displayAboutMe;

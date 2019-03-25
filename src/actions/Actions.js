@@ -7,3 +7,7 @@ export const dosomething = () => ({
 export const showthething = () => ({
   type: actionTypes.SHOWTHETHING
 });
+
+export const scrollhappened = () => ({
+  type: actionTypes.SCROLLHAPPENED
+});
