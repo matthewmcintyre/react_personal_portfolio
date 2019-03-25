@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 const SectionWrapper = styled.section`
   height: 100vh;
-  background: #b6be9c;
+  background: blue;
 `;
 
 class SummarySection extends Component {
