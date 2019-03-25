@@ -1,0 +1,2 @@
+export const DOSOMETHING = "DOSOMETHING";
+export const SHOWTHETHING = "SHOWTHETHING";

@@ -1,28 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Provider } from "react-redux";
+import store from "./store";
+import MyClass from "./components/MyClass";
+import Header from "./components/Header/Header";
+import FirstSection from "./components/FirstSection/FirstSection";
+import SecondSection from "./components/SecondSection/SecondSection";
+import { createGlobalStyle } from "styled-components";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+const GlobalStyle = createGlobalStyle`
+  body {
+    background: #fefae0;
   }
-}
+  * {
+    margin: 0;
+    padding: 0;
+  }
+`;
+
+const App = () => (
+  <Provider store={store}>
+    <GlobalStyle />
+    <Header />
+    <FirstSection />
+    <SecondSection />
+    <MyClass />
+  </Provider>
+);
 
 export default App;
