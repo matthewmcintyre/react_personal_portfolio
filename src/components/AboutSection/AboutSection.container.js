@@ -87,6 +87,7 @@ const IntroWrapper = styled.div`
 `;
 
 const IntroOne = styled.div`
+  padding: 5px;
   font-size: 20px;
   transition: 1.5s;
   transition-delay: 2.3s;
@@ -94,6 +95,7 @@ const IntroOne = styled.div`
 `;
 
 const IntroTwo = styled.div`
+  padding: 5px;
   font-size: 15px;
   transition: 1.5s;
   transition-delay: 3s;
@@ -101,6 +103,7 @@ const IntroTwo = styled.div`
 `;
 
 const IntroThree = styled.div`
+  padding: 5px;
   font-size: 10px;
   transition: 1.5s;
   transition-delay: 3.7s;
@@ -123,7 +126,10 @@ class AboutSection extends Component {
             <IntroOne show={this.props.show}>
               An aspiring Web Developer from New Zealand.
             </IntroOne>
-            <IntroTwo show={this.props.show}>I want job</IntroTwo>
+            <IntroTwo show={this.props.show}>
+              I love building functional, responsive and beautiful websites and
+              am dedicated to improving my skillset.
+            </IntroTwo>
             <IntroThree show={this.props.show}>please hire me</IntroThree>
           </IntroWrapper>
         </HiddenProfile>

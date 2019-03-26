@@ -11,3 +11,6 @@ export const showthething = () => ({
 export const scrollhappened = () => ({
   type: actionTypes.SCROLLHAPPENED
 });
+export const menuclicked = () => ({
+  type: actionTypes.MENUCLICKED
+});

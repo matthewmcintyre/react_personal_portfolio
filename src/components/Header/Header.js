@@ -31,6 +31,7 @@ const MenuBurgerWrapper = styled.div`
   padding: 5px;
   margin-left: 10px;
   align-self: flex-start;
+
   @media (min-width: 700px) {
     display: none;
   }
@@ -39,7 +40,7 @@ const MenuBurgerWrapper = styled.div`
 const Line = styled.div`
   width: 25px;
   height: 3.5px;
-  background-color: #333;
+  background-color: black;
   margin: 4.5px 0;
   transition: 0.4s;
 

@@ -2,44 +2,52 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { scrollhappened } from "../../actions/Actions";
 import { connect } from "react-redux";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faReact,
-  faCss3,
-  faHtml5,
-  faJs
-} from "@fortawesome/free-brands-svg-icons";
 
 const SectionWrapper = styled.section`
   height: 100vh;
-  background: #b6be9c;
+  background: #747e7d;
 `;
 
-const Greeting = styled.h1`
-  position: absolute;
-  cursor: pointer;
-  border-bottom: solid #606c38 5px;
-  transition: 2s;
-  border-bottom: solid #606c38 5px;
-
-  color: ${props => (props.scrolled ? "red" : "green")};
+const Heading = styled.h1`
+  color: black;
 `;
+
+const ListWrapper = styled.ul``;
+
+const ListItem = styled.li``;
 
 const WriteUp = styled.p``;
-const IconWrapper = styled.div``;
+
+//freecodecamp certs at the bottom on mobile
+//dev skills list
+//background of my IT work
 
 class SummarySection extends Component {
   render() {
     return (
       <SectionWrapper>
-        <WriteUp>Strong IT background</WriteUp>
-        <IconWrapper>
-          <FontAwesomeIcon icon={faReact} />
-          <FontAwesomeIcon icon={faCss3} />
-          <FontAwesomeIcon icon={faHtml5} />
-          <FontAwesomeIcon icon={faJs} />
-        </IconWrapper>
-        <Greeting>testing for scroll</Greeting>
+        <Heading>Skills and Stack</Heading>
+        <WriteUp>Current skills and stack</WriteUp>
+        <ListWrapper>
+          <ListItem>Mobile Responsive</ListItem>
+          <ListItem>ReactJS</ListItem>
+          <ListItem>Redux</ListItem>
+          <ListItem>CSS</ListItem>
+          <ListItem>HTML</ListItem>
+          <ListItem>JavaScript</ListItem>
+          <ListItem>GitHub</ListItem>
+          <ListItem>VSCode</ListItem>
+          <ListItem>Styled-Components</ListItem>
+        </ListWrapper>
+        <WriteUp>
+          With a background in IT support I build on a strong foundation with a
+          passion for technology
+        </WriteUp>
+        <WriteUp>
+          I am improving everyday and am seeking the opportunity to prove
+          myself.
+        </WriteUp>
+        <WriteUp>Check out some of my work below!</WriteUp>
       </SectionWrapper>
     );
   }
