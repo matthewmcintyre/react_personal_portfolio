@@ -4,7 +4,7 @@ const initialState = {
 
 const displayAboutMe = (state = initialState, action) => {
   switch (action.type) {
-    case "SHOWTHETHING":
+    case "SHOWABOUT":
       return {
         ...state,
         show: true

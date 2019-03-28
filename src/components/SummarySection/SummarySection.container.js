@@ -25,7 +25,7 @@ const WriteUp = styled.p``;
 class SummarySection extends Component {
   render() {
     return (
-      <SectionWrapper>
+      <SectionWrapper id="summarysection">
         <Heading>Skills and Stack</Heading>
         <WriteUp>Current skills and stack</WriteUp>
         <ListWrapper>

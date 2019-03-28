@@ -1,13 +1,14 @@
 const initialState = {
-  menuopen: false
+  menuopen: false,
+  iconhovered: false
 };
 
 const headerHandler = (state = initialState, action) => {
   switch (action.type) {
-    case "MENUCLICKED":
+    case "MENUBURGERCLICKED":
       return {
         ...state,
-        menuopen: true
+        menuopen: !state.menuopen
       };
 
     default:

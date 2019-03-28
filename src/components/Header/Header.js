@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { showabout, menuburgerclicked } from "../../actions/Actions";
+import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
@@ -7,12 +9,49 @@ import {
   faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
 
-const Item = styled.p`
-  font-size: 20px;
+const Item = styled.a`
+  cursor: pointer;
+  margin: 4px; 5px;
+  text-decoration:none;
+  color:black;
+  :hover {
+    color: #283618;
+  }
 
-  display: none;
   @media (min-width: 700px) {
-    display: block;
+    margin: 0 8px;
+  }
+`;
+
+const fadein = keyframes`
+from { 
+  opacity: 0; 
+}
+to { 
+  opacity: 1; 
+}
+`;
+
+const fadeout = keyframes`
+from { 
+  opacity: 1; 
+}
+to { 
+  opacity: 0;
+}
+`;
+
+const ItemWrapper = styled.div`
+  display: ${props => (props.menuopen ? "flex" : "none")};
+  flex-direction: column;
+  font-size: 20px;
+  @media (max-width: 699px) {
+    animation: ${props => (props.menuopen ? fadein : fadeout)} 1s;
+  }
+  @media (min-width: 700px) {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
   }
 `;
 
@@ -21,9 +60,17 @@ const Nav = styled.nav`
   background: #606c38;
   width: 100%;
   z-index: 9999;
-  height: 40px;
+
   display: flex;
   justify-content: space-between;
+
+  transition: height 0.2s;
+
+  height: ${props => (props.menuopen ? "150px" : "40px")};
+
+  @media (min-width: 700px) {
+    height: 50px;
+  }
 `;
 
 const MenuBurgerWrapper = styled.div`
@@ -37,65 +84,134 @@ const MenuBurgerWrapper = styled.div`
   }
 `;
 
+//apparent transition effect issue on mobile chrome versions
 const Line = styled.div`
   width: 25px;
-  height: 3.5px;
-  background-color: black;
-  margin: 4.5px 0;
-  transition: 0.4s;
+  height: 3px;
+  margin: 5px 0;
+  transition: 0.3s linear;
+  -webkit-transition: 0.3s linear;
+  -moz-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
 
-  :hover {
-    background-color: red;
-  }
+  background-color: ${props => (props.menuopen ? "black" : "black")};
 `;
 
-const LineOne = styled(Line)``;
+//transforms 45 degree
+const LineOne = styled(Line)`
+  transform: ${props =>
+    props.menuopen
+      ? "rotate(45deg) translate(4px, 7px)"
+      : "rotate(0deg) translate(0px, 0px)"};
 
-const LineTwo = styled(Line)``;
+  -webkit-transform: ${props =>
+    props.menuopen
+      ? "rotate(45deg) translate(4px, 7px)"
+      : "rotate(0deg) translate(0px, 0px)"};
+`;
 
-const LineThree = styled(Line)``;
+//line 2 width decreases until it is the centre point
+//or cool rotation effect
+const LineTwo = styled(Line)`
+  transform: ${props =>
+    props.menuopen
+      ? "rotate(180deg) translate(2px, -15px)"
+      : "rotate(0deg) translate(0px, 0px)"};
+
+  -webkit-transform: ${props =>
+    props.menuopen
+      ? "rotate(180deg) translate(2px, -15px)"
+      : "rotate(0deg) translate(0px, 0px)"};
+`;
+
+//transforms 45 degree
+const LineThree = styled(Line)`
+  transform: ${props =>
+    props.menuopen
+      ? "rotate(-45deg) translate(4px, -7.5px)"
+      : "rotate(0deg) translate(0px, 0px)"};
+
+  -webkit-transform: ${props =>
+    props.menuopen
+      ? "rotate(-45deg) translate(4px, -7.5px)"
+      : "rotate(0deg) translate(0px, 0px)"};
+`;
 
 const MenuWrapper = styled.div`
   @media (min-width: 700px) {
     align-self: center;
     display: flex;
     flex-direction: row;
+    margin-left: 10px;
   }
 `;
 
 const IconWrapper = styled.div`
-  align-self: center;
+  align-self: flex-start;
+  padding: 10px;
   display: flex;
   justify-content: space-around;
   width: 100px;
 
   @media (min-width: 700px) {
     flex-direction: row;
+    margin-right: 20px;
+    align-self: center;
+  }
+`;
+
+const Icon = styled(FontAwesomeIcon)`
+  cursor: pointer;
+
+  :hover {
+    color: #283618;
+  }
+
+  @media (min-width: 700px) {
+    font-size: 28px;
+    margin: 0px 10px;
   }
 `;
 
 class Header extends Component {
   render() {
     return (
-      <Nav>
+      <Nav menuopen={this.props.menuopen}>
         <MenuWrapper>
-          <MenuBurgerWrapper>
-            <LineOne />
-            <LineTwo />
-            <LineThree />
+          <MenuBurgerWrapper
+            onBlur={() => this.props.menuburgerclicked()}
+            onClick={() => this.props.menuburgerclicked()}
+          >
+            <LineOne menuopen={this.props.menuopen} />
+            <LineTwo menuopen={this.props.menuopen} />
+            <LineThree menuopen={this.props.menuopen} />
           </MenuBurgerWrapper>
-          <Item>About Me</Item>
-          <Item>Summary</Item>
-          <Item>Projects</Item>
+          <ItemWrapper menuopen={this.props.menuopen}>
+            <Item onClick={() => this.props.showabout()} href="#aboutsection">
+              About Me
+            </Item>
+            <Item href="#summarysection">Summary</Item>
+            <Item href="#projectsection">Projects</Item>
+          </ItemWrapper>
         </MenuWrapper>
         <IconWrapper>
-          <FontAwesomeIcon icon={faGithub} size="lg" />
-          <FontAwesomeIcon icon={faFreeCodeCamp} size="lg" />
-          <FontAwesomeIcon icon={faLinkedin} size="lg" />
+          <Icon icon={faGithub} size="lg" />
+          <Icon icon={faFreeCodeCamp} size="lg" />
+          <Icon icon={faLinkedin} size="lg" />
         </IconWrapper>
       </Nav>
     );
   }
 }
 
-export default Header;
+const mapStateToProps = state => ({
+  show: state.displayAboutMe.show,
+  menuopen: state.headerHandler.menuopen
+});
+
+const myActions = { showabout, menuburgerclicked };
+
+export default connect(
+  mapStateToProps,
+  myActions
+)(Header);

@@ -66,7 +66,7 @@ class SummarySection extends Component {
   render() {
     return (
       <SectionWrapper>
-        <ProjectsWrapper>
+        <ProjectsWrapper id="projectsection">
           <Project>
             <ProjectImg src={markdown_previewer} />
           </Project>

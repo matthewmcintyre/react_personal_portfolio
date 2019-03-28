@@ -16,20 +16,24 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: #fefae0;
     font-family: 'Bitter', serif;
+   
   }
   * {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
   }
 `;
 
 const App = () => (
   <Provider store={store}>
     <GlobalStyle />
+
     <Header />
     <AboutSection />
     <SummarySection />
     <ProjectSection />
+
     <MyClass />
     <Footer />
   </Provider>

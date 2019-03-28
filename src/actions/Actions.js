@@ -4,13 +4,13 @@ export const dosomething = () => ({
   type: actionTypes.DOSOMETHING
 });
 
-export const showthething = () => ({
-  type: actionTypes.SHOWTHETHING
+export const showabout = () => ({
+  type: actionTypes.SHOWABOUT
 });
 
 export const scrollhappened = () => ({
   type: actionTypes.SCROLLHAPPENED
 });
-export const menuclicked = () => ({
-  type: actionTypes.MENUCLICKED
+export const menuburgerclicked = () => ({
+  type: actionTypes.MENUBURGERCLICKED
 });
