@@ -178,10 +178,7 @@ class Header extends Component {
     return (
       <Nav menuopen={this.props.menuopen}>
         <MenuWrapper>
-          <MenuBurgerWrapper
-            onBlur={() => this.props.menuburgerclicked()}
-            onClick={() => this.props.menuburgerclicked()}
-          >
+          <MenuBurgerWrapper onClick={() => this.props.menuburgerclicked()}>
             <LineOne menuopen={this.props.menuopen} />
             <LineTwo menuopen={this.props.menuopen} />
             <LineThree menuopen={this.props.menuopen} />

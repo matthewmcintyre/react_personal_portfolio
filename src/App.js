@@ -33,8 +33,6 @@ const App = () => (
     <AboutSection />
     <SummarySection />
     <ProjectSection />
-
-    <MyClass />
     <Footer />
   </Provider>
 );

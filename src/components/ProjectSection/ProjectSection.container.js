@@ -8,6 +8,7 @@ import random_quote_machine from "../../images/random quote machine.png";
 import survey_form from "../../images/survey form.png";
 import technical_documentation from "../../images/technical documentation.png";
 import tribute_page from "../../images/tribute page.png";
+import ProjectBox from "./ProjectBox";
 
 //handles section and flexbox
 const SectionWrapper = styled.section`
@@ -20,13 +21,14 @@ const SectionWrapper = styled.section`
 //wraps project boxes in grid layout
 const ProjectsWrapper = styled.div`
   display: grid;
+  align-self: center;
+  height: 100%;
+  justify-content: center;
+  align-content: space-around;
 
   padding: 10px;
-  grid-template-columns: repeat(1, minmax(90px, 320px));
-  grid-template-rows: repeat(6, minmax(80px, 250px));
-  align-content: center;
-  grid-gap: 20px;
-  font-size: 1.6vh;
+  grid-template-columns: repeat(1, 80%);
+  grid-template-rows: repeat(6, auto);
 
   @media (min-width: 700px) {
     grid-template-columns: repeat(2, minmax(90px, 40vw));
@@ -40,13 +42,18 @@ const Project = styled.div`
   justify-self: center;
   object-fit: cover;
   transition: 1s;
+  position: relative;
 
   :hover {
     opacity: 0.2;
   }
 `;
 
-const ProjectInfo = styled.div``;
+// contains infoname, infolist and infolink
+const ProjectInfo = styled.div`
+  position: absolute;
+  top: 5%;
+`;
 
 const ProjectInfoName = styled.p``;
 
@@ -69,6 +76,7 @@ class SummarySection extends Component {
         <ProjectsWrapper id="projectsection">
           <Project>
             <ProjectImg src={markdown_previewer} />
+            <ProjectInfo>Hi</ProjectInfo>
           </Project>
           <Project>
             <ProjectImg src={product_landing} />
@@ -82,9 +90,7 @@ class SummarySection extends Component {
           <Project>
             <ProjectImg src={technical_documentation} />
           </Project>
-          <Project>
-            <ProjectImg src={tribute_page} />
-          </Project>
+          <ProjectBox src={tribute_page} />
         </ProjectsWrapper>
       </SectionWrapper>
     );
