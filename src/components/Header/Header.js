@@ -66,6 +66,8 @@ const Nav = styled.nav`
 
   transition: height 0.2s;
 
+  box-shadow: 1px 1px 5px;
+
   height: ${props => (props.menuopen ? "150px" : "40px")};
 
   @media (min-width: 700px) {
