@@ -194,9 +194,25 @@ class Header extends Component {
           </ItemWrapper>
         </MenuWrapper>
         <IconWrapper>
-          <Icon icon={faGithub} size="lg" />
-          <Icon icon={faFreeCodeCamp} size="lg" />
-          <Icon icon={faLinkedin} size="lg" />
+          <Icon
+            onClick={() => window.open("https://github.com/matthewmcintyre/")}
+            icon={faGithub}
+            size="lg"
+          />
+          <Icon
+            onClick={() =>
+              window.open("https://www.freecodecamp.org/matthewmcintyre")
+            }
+            icon={faFreeCodeCamp}
+            size="lg"
+          />
+          <Icon
+            onClick={() =>
+              window.open("https://www.linkedin.com/in/matthew-mcintyre/")
+            }
+            icon={faLinkedin}
+            size="lg"
+          />
         </IconWrapper>
       </Nav>
     );

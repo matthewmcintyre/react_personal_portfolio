@@ -26,6 +26,7 @@ const Greeting = styled.h1`
   text-align: center;
 
   @media (min-width: 700px) {
+    top: ${props => (props.show ? "70px" : "50vh")};
     font-size: 30px;
     width: 185px;
     :hover {
