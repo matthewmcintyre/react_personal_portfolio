@@ -76,8 +76,20 @@ function ProjectBox(props) {
         <ProjectInfo>
           <ProjectInfoStack>Built With: {props.stack}</ProjectInfoStack>
           <ProjectInfoLinksContainer>
-            <ProjectInfoButton>View Live</ProjectInfoButton>
-            <ProjectInfoButton>View Source</ProjectInfoButton>
+            <ProjectInfoButton
+              onClick={() =>
+                window.open("https://matthewmcintyre.github.io/" + props.id)
+              }
+            >
+              View Live
+            </ProjectInfoButton>
+            <ProjectInfoButton
+              onClick={() =>
+                window.open("https://github.com/matthewmcintyre/" + props.id)
+              }
+            >
+              View Source
+            </ProjectInfoButton>
           </ProjectInfoLinksContainer>
         </ProjectInfo>
       </Project>

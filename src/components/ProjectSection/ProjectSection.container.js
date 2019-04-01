@@ -79,29 +79,43 @@ class SummarySection extends Component {
             src={markdown_previewer}
             name="Markdown Previewer"
             stack="HTML/CSS"
+            id="markdown_previewer"
           />
 
           <ProjectBox
             src={product_landing}
             name="Product Landing"
             stack="HTML/CSS"
+            id="Product_Landing_Page"
           />
 
           <ProjectBox
             src={random_quote_machine}
             name="Random Quote Machine"
             stack="React/CSS"
+            id="random_quote_machine"
           />
 
-          <ProjectBox src={survey_form} name="Survey Form" stack="HTML/CSS" />
+          <ProjectBox
+            src={survey_form}
+            name="Survey Form"
+            stack="HTML/CSS"
+            id="Survey_Form"
+          />
 
           <ProjectBox
             src={technical_documentation}
             name="Technical Documentation"
             stack="HTML/CSS"
+            id="Technical_Documentation_Page"
           />
 
-          <ProjectBox src={tribute_page} name="Tribute Page" stack="HTML/CSS" />
+          <ProjectBox
+            src={tribute_page}
+            name="Tribute Page"
+            stack="HTML/CSS"
+            id="Tribute_Page"
+          />
         </ProjectsWrapper>
       </SectionWrapper>
     );
