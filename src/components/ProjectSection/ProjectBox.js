@@ -1,36 +1,63 @@
 import React from "react";
 import styled from "styled-components";
 
-const Project = styled.div`
+const ProjectWrapper = styled.div`
   display: block;
   justify-self: center;
   object-fit: cover;
   transition: 1s;
   position: relative;
+`;
 
-  :hover {
-    opacity: 0.2;
+//wraps the project so it only handles a hover on the img
+const Project = styled.div`
+  :hover img {
+    opacity: 0.1;
+  }
+
+  :hover div {
+    opacity: 1;
   }
 `;
 
 // contains infoname, infolist and infolink
 const ProjectInfo = styled.div`
-  display: ${props => (props.menuopen ? "block" : "none")};
-
-  :hover {
-    opacity: 1;
-  }
+  opacity: 0;
+  transition: 1s;
+  display: flex;
+  justify-content: center;
 `;
 
 const ProjectInfoName = styled.p`
-  position: absolute;
-  top: 5%;
-  left: 50%;
+  text-align: center;
 `;
 
-const ProjectInfoList = styled.p``;
+const ProjectInfoStack = styled.p`
+  position: absolute;
+  top: 15%;
+`;
 
-const ProjectInfoLink = styled.div``;
+const ProjectInfoLinksContainer = styled.div`
+  position: absolute;
+  top: 60%;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+`;
+
+const ProjectInfoButton = styled.div`
+  cursor: pointer;
+  background: #606c38;
+  border-radius: 2px;
+  padding: 5px;
+  box-shadow: 1px 2px 4px;
+
+  :hover {
+    -webkit-transform: translate(1px, 1px);
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 3px;
+  }
+`;
 
 //the actual image
 const ProjectImg = styled.img`
@@ -38,19 +65,24 @@ const ProjectImg = styled.img`
   display: block;
   border: 1px solid black;
   margin-bottom: 10px;
+  transition: 1s;
 `;
 
 function ProjectBox(props) {
   return (
-    <Project>
-      <ProjectImg src={props.src} />
-      <ProjectInfo>
-        <ProjectInfoName>Hi</ProjectInfoName>
-        <ProjectInfoList>Hi</ProjectInfoList>
-        <ProjectInfoLink>Hi</ProjectInfoLink>
-        <ProjectInfoName>Hi</ProjectInfoName>
-      </ProjectInfo>
-    </Project>
+    <ProjectWrapper>
+      <Project>
+        <ProjectImg src={props.src} />
+        <ProjectInfo>
+          <ProjectInfoStack>Built With: {props.stack}</ProjectInfoStack>
+          <ProjectInfoLinksContainer>
+            <ProjectInfoButton>View Live</ProjectInfoButton>
+            <ProjectInfoButton>View Source</ProjectInfoButton>
+          </ProjectInfoLinksContainer>
+        </ProjectInfo>
+      </Project>
+      <ProjectInfoName>{props.name}</ProjectInfoName>
+    </ProjectWrapper>
   );
 }
 

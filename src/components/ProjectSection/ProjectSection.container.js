@@ -31,8 +31,9 @@ const ProjectsWrapper = styled.div`
   grid-template-rows: repeat(6, auto);
 
   @media (min-width: 700px) {
-    grid-template-columns: repeat(2, minmax(90px, 40vw));
-    grid-template-rows: repeat(3, minmax(80px, 50vh));
+    grid-template-columns: repeat(2, 35%);
+    grid-template-rows: repeat(3, 20%);
+    justify-content: space-evenly;
   }
 `;
 
@@ -74,23 +75,33 @@ class SummarySection extends Component {
     return (
       <SectionWrapper>
         <ProjectsWrapper id="projectsection">
-          <Project>
-            <ProjectImg src={markdown_previewer} />
-            <ProjectInfo>Hi</ProjectInfo>
-          </Project>
-          <Project>
-            <ProjectImg src={product_landing} />
-          </Project>
-          <Project>
-            <ProjectImg src={random_quote_machine} />
-          </Project>
-          <Project>
-            <ProjectImg src={survey_form} />
-          </Project>
-          <Project>
-            <ProjectImg src={technical_documentation} />
-          </Project>
-          <ProjectBox src={tribute_page} />
+          <ProjectBox
+            src={markdown_previewer}
+            name="Markdown Previewer"
+            stack="HTML/CSS"
+          />
+
+          <ProjectBox
+            src={product_landing}
+            name="Product Landing"
+            stack="HTML/CSS"
+          />
+
+          <ProjectBox
+            src={random_quote_machine}
+            name="Random Quote Machine"
+            stack="React/CSS"
+          />
+
+          <ProjectBox src={survey_form} name="Survey Form" stack="HTML/CSS" />
+
+          <ProjectBox
+            src={technical_documentation}
+            name="Technical Documentation"
+            stack="HTML/CSS"
+          />
+
+          <ProjectBox src={tribute_page} name="Tribute Page" stack="HTML/CSS" />
         </ProjectsWrapper>
       </SectionWrapper>
     );
