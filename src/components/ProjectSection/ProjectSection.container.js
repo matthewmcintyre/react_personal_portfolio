@@ -16,6 +16,10 @@ const SectionWrapper = styled.section`
   background: #fefae0;
   display: flex;
   justify-content: center;
+
+  @media (min-width: 700px) {
+    height: 150vh;
+  }
 `;
 
 //wraps project boxes in grid layout
@@ -30,44 +34,17 @@ const ProjectsWrapper = styled.div`
   grid-template-columns: repeat(1, 80%);
   grid-template-rows: repeat(6, auto);
 
+  @media (orientation: landscape) {
+    grid-template-columns: repeat(2, 35%);
+    grid-template-rows: repeat(3, 20%);
+    justify-content: space-evenly;
+  }
+
   @media (min-width: 700px) {
     grid-template-columns: repeat(2, 35%);
     grid-template-rows: repeat(3, 20%);
     justify-content: space-evenly;
   }
-`;
-
-//project box that shows extra info on hover and has clickable link to gh pages
-const Project = styled.div`
-  display: block;
-  justify-self: center;
-  object-fit: cover;
-  transition: 1s;
-  position: relative;
-
-  :hover {
-    opacity: 0.2;
-  }
-`;
-
-// contains infoname, infolist and infolink
-const ProjectInfo = styled.div`
-  position: absolute;
-  top: 5%;
-`;
-
-const ProjectInfoName = styled.p``;
-
-const ProjectInfoList = styled.p``;
-
-const ProjectInfoLink = styled.div``;
-
-//the actual image
-const ProjectImg = styled.img`
-  width: 100%;
-  display: block;
-  border: 1px solid black;
-  margin-bottom: 10px;
 `;
 
 class SummarySection extends Component {
