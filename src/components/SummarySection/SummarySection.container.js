@@ -6,13 +6,20 @@ import { connect } from "react-redux";
 const SectionWrapper = styled.section`
   height: 100vh;
   background: #747e7d;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0px 20px;
 `;
 
 const Heading = styled.h1`
   color: black;
+  align-self: center;
 `;
 
-const ListWrapper = styled.ul``;
+const ListWrapper = styled.ul`
+  margin: 0px 30px;
+`;
 
 const ListItem = styled.li``;
 
@@ -27,7 +34,7 @@ class SummarySection extends Component {
     return (
       <SectionWrapper id="summarysection">
         <Heading>Skills and Stack</Heading>
-        <WriteUp>Current skills and stack</WriteUp>
+
         <ListWrapper>
           <ListItem>Mobile Responsive</ListItem>
           <ListItem>ReactJS</ListItem>
@@ -41,7 +48,7 @@ class SummarySection extends Component {
         </ListWrapper>
         <WriteUp>
           With a background in IT support I build on a strong foundation with a
-          passion for technology
+          passion for technology.
         </WriteUp>
         <WriteUp>
           I am improving everyday and am seeking the opportunity to prove
