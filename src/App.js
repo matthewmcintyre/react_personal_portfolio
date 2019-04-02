@@ -1,7 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
 import store from "./store";
-import MyClass from "./components/MyClass";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import AboutSection from "./components/AboutSection/AboutSection.container";
