@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faReact,
@@ -7,6 +7,16 @@ import {
   faHtml5,
   faJs
 } from "@fortawesome/free-brands-svg-icons";
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
 const FooterWrapper = styled.footer`
   background: #606c38;
@@ -39,6 +49,10 @@ const IconWrapper = styled.div`
   width: 70px;
 `;
 
+const ReactIcon = styled(FontAwesomeIcon)`
+  animation: ${rotate} 4s linear infinite;
+`;
+
 class Footer extends Component {
   render() {
     return (
@@ -48,7 +62,7 @@ class Footer extends Component {
         <BuiltWithWrapper>
           <BuiltWith>Created with:</BuiltWith>
           <IconWrapper>
-            <FontAwesomeIcon icon={faReact} />
+            <ReactIcon icon={faReact} />
             <FontAwesomeIcon icon={faCss3} />
             <FontAwesomeIcon icon={faHtml5} />
             <FontAwesomeIcon icon={faJs} />
