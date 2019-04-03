@@ -9,7 +9,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 const SectionWrapper = styled.section`
   position: relative;
   height: 100vh;
-  background: ${props => (props.show ? "#D7BE82" : "#fefae0")};
+  background: #fefae0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,7 +41,7 @@ const Greeting = styled.h1`
 
 const HiddenProfile = styled.div`
   position: absolute;
-  height: 75vh;
+  height: 65vh;
   display: flex;
   width: 100vw;
   justify-content: center;
@@ -138,8 +138,12 @@ const DownArrow = styled(FontAwesomeIcon)`
   bottom: 5px;
   font-size: 20px;
   color: #606c38;
+  transition: 1.5s;
+  transition-delay: 4s;
 
   animation: ${bouncy} 2s linear infinite;
+
+  opacity: ${props => (props.show ? "1" : "0")};
 `;
 
 class AboutSection extends Component {
@@ -169,7 +173,7 @@ class AboutSection extends Component {
         <Greeting onClick={() => this.props.showabout()} show={this.props.show}>
           Hi, I'm Matt.
         </Greeting>
-        <DownArrow icon={faChevronDown} />
+        <DownArrow icon={faChevronDown} show={this.props.show} />
       </SectionWrapper>
     );
   }
