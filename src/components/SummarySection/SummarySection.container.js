@@ -4,13 +4,6 @@ import { scrollhappened } from "../../actions/Actions";
 import { connect } from "react-redux";
 import SkillBox from "./SkillBox";
 import {
-  faReact,
-  faCss3,
-  faHtml5,
-  faJs,
-  faGithub
-} from "@fortawesome/free-brands-svg-icons";
-import {
   faLaptopCode,
   faToolbox,
   faUserSecret,
