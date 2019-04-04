@@ -1,7 +1,7 @@
 {
   "name": "react_personal_portfolio",
   "version": "0.1.0",
-  "homepage": "https://matthewmcintyre.github.io/react_personal_portfolio/",
+  "homepage": "https://matthewmcintyre.me",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
