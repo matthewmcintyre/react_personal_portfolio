@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
 import { showabout } from "../../actions/Actions";
 import { connect } from "react-redux";
-import profilepicture from "../../images/profile picture.png";
+import profilepicture from "../../images/profile.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -64,17 +64,17 @@ const HiddenProfile = styled.div`
 `;
 
 const ImgWrapper = styled.div`
-  flex-basis: 50%;
+  flex-basis: 30%;
   padding: 20px;
   display: flex;
   justify-content: center;
 `;
 
 const ProfileImg = styled.img`
-  width: 80%;
+  width: 50%;
   display: block;
   align-self: center;
-  border: 1px solid black;
+  border: 2px solid #8b897b;
 
   transition: 1s;
   transition-delay: 1.3s;
@@ -160,7 +160,7 @@ class AboutSection extends Component {
           </ImgWrapper>
           <IntroWrapper>
             <IntroOne show={this.props.show}>
-              An aspiring Web Developer from New Zealand.
+              Front End Web Developer from New Zealand.
             </IntroOne>
             <IntroTwo show={this.props.show}>
               Self-taught, motivated, and dedicated to improving my skillset.
@@ -173,7 +173,9 @@ class AboutSection extends Component {
         <Greeting onClick={() => this.props.showabout()} show={this.props.show}>
           Hi, I'm Matt.
         </Greeting>
-        <DownArrow icon={faChevronDown} show={this.props.show} />
+        <a href="#summarysection">
+          <DownArrow icon={faChevronDown} show={this.props.show} />
+        </a>
       </SectionWrapper>
     );
   }
