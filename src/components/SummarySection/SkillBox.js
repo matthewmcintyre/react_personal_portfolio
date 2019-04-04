@@ -7,11 +7,11 @@ const SkillWrapper = styled.div`
   flex-direction: column;
   height: 100%;
   align-items: center;
-  background-color: #bcd39c;
-  border: 1px solid black;
+  background-color: #99c29d;
+  border: 3px solid #717171;
   padding: 5px;
   @media (min-width: 700px) {
-    padding: 20px;
+    padding: 15px; 10px;
   }
 `;
 
@@ -32,11 +32,11 @@ const SkillTitle = styled.div`
   }
 `;
 
-//this currently does not do anything, probably because I need to set a static height
 const SkillSummaryWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  height: 80%;
 `;
 
 const SkillSummaryIntro = styled.div`
@@ -58,7 +58,7 @@ const SkillSummaryList = styled.div`
 
   @media (min-width: 700px) {
     font-size: 15px;
-    padding: 10px 30px;
+    padding: 0px 30px;
   }
 `;
 

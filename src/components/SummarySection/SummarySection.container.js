@@ -9,14 +9,16 @@ import {
   faUserSecret,
   faScroll
 } from "@fortawesome/free-solid-svg-icons";
+import { faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const SectionWrapper = styled.section`
-  height: 1700px;
-  background: #ffe0b5;
+  height: 1800px;
+  background: #dadada;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 0px 20px;
+  padding: 0px 10px;
 
   @media (min-width: 700px) {
     height: 100vh;
@@ -24,22 +26,15 @@ const SectionWrapper = styled.section`
   }
 `;
 
-const Heading = styled.h1`
-  color: black;
-  align-self: center;
-`;
-
 const WriteUpWrapper = styled.div`
   align-self: center;
   width: 90%;
-  background-color: #9bf3f0;
+  background-color: #7b6771;
   padding: 10px;
-  border: 1px solid black;
-
+  border: 3px solid #5a5a5a;
   font-size: 14px;
 
   @media (min-width: 700px) {
-    padding: 20px;
     margin: 20px;
     font-size: 15px;
     width: 80%;
@@ -77,7 +72,7 @@ const FrontEndSkillList = (
   <ul>
     <li>HTML</li>
     <li>CSS</li>
-    <li>Mobile Responsiveness</li>
+    <li>Mobile Responsive</li>
     <li>JavaScript</li>
     <li>React</li>
     <li>Styled-Components</li>
@@ -93,35 +88,52 @@ const ToolboxSkillList = (
     <li>VSCode</li>
     <li>MacOS</li>
     <li>Windows</li>
+    <li>Chrome Dev Tools</li>
   </ul>
 );
 
-const MeSkillList = (
-  <ul>
-    <li>Gym</li>
-    <li>Cars</li>
-    <li>Music</li>
-    <li>Gaming</li>
-    <li>Food</li>
-    <li>Beer</li>
-    <li>Unordered Lists</li>
-  </ul>
-);
+const WriteUpContent =
+  "I have structured my learning through freeCodeCamp's Front End Developer Course. In order to complete each certificate I have had to produce a number of projects that adhere to requirements outlined by freeCodeCamp. So far I have earned two Certificates and am close to finishing my third.";
 
-const ExperienceSkillList = (
-  <ul>
-    <li>Service Desk Technician</li>
-    <li>Field Services Engineer</li>
-    <li>Windows 10 rollout Engineer</li>
-  </ul>
-);
+const FreeCodeCampCertButtonWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  padding: 20px 0px;
+  flex-direction: column;
+
+  @media (min-width: 700px) {
+    flex-direction: row;
+    padding: 20px;
+  }
+`;
+
+const FreeCodeCampCertButton = styled.div`
+  color: #ccc;
+  background: darkgreen;
+  border: 2px solid #777;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.5s;
+  text-align: center;
+  margin: 5px;
+
+  :hover {
+    color: #333333;
+    background: #ccc;
+  }
+`;
+
+const FreeCodeCampCertIcon = styled(FontAwesomeIcon)`
+  padding: 0px 5px;
+`;
 
 class SummarySection extends Component {
   render() {
     return (
       <SectionWrapper id="summarysection">
-        <Heading>Skills and Stack</Heading>
-
         <SkillBoxContainer>
           <SkillBox
             icon={faLaptopCode}
@@ -133,33 +145,47 @@ class SummarySection extends Component {
           <SkillBox
             icon={faToolbox}
             title="Development Toolbox"
-            contentIntro='As an Apple "Enthusiast", I do all of my development on my MacBook. However, given my past work experience I am also pretty handy on Windows. Here is what I build my projects with:'
+            contentIntro='As an Apple "Enthusiast", I do all of my development on my MacBook using Visual Studio Code. I am expanding my skillset by directing my learning towards Webpack, Babel, and Jest. This is my currently what I work with:'
             contentList={ToolboxSkillList}
           />
 
           <SkillBox
             icon={faUserSecret}
             title="Me"
-            contentIntro="I love Web Development. And other stuff:"
-            contentList={MeSkillList}
+            contentIntro="I come from humble beginnings of softmodding consoles, building computers and managing private gaming servers. My ambition is to become a Full Stack Developer who will work on a diverse range of projects used by millions of people. I have relocated to London in order to experience Europe and pursue exciting career opportunities."
           />
 
           <SkillBox
             icon={faScroll}
             title="Experience"
-            contentIntro="I have worked in IT for 5 years and have made the conscious decision to move into Web Development. After years self-studying off and on I finally decided to pull the trigger and have dedicated the past 3 months to chasing my passion and (hopefully) getting hired! Below are my previous roles:"
-            contentList={ExperienceSkillList}
+            contentIntro="After much deliberation around when to make this career transition, I pulled the trigger at the end of January and the rest is history. I have spent countless hours honing my Front End Development skills with an intensive focus and I am ready for the next step. My projects are all published on GitHub and my previous work experience in IT Support is outlined on my LinkedIn."
           />
         </SkillBoxContainer>
 
         <WriteUpWrapper>
-          <WriteUp>
-            With a background in IT Support, I build on a strong foundation with
-            an enthusiasm for all things tech. I am ready to take the next step
-            and am confident my eagerness to learn will prove invaluable to any
-            organization.
-          </WriteUp>
-
+          <WriteUp>{WriteUpContent}</WriteUp>
+          <FreeCodeCampCertButtonWrapper>
+            <FreeCodeCampCertButton
+              onClick={() =>
+                window.open(
+                  "https://www.freecodecamp.org/certification/matthewmcintyre/responsive-web-design"
+                )
+              }
+            >
+              <FreeCodeCampCertIcon icon={faFreeCodeCamp} />
+              Responsive Web Design
+            </FreeCodeCampCertButton>
+            <FreeCodeCampCertButton
+              onClick={() =>
+                window.open(
+                  "https://www.freecodecamp.org/certification/matthewmcintyre/javascript-algorithms-and-data-structures"
+                )
+              }
+            >
+              <FreeCodeCampCertIcon icon={faFreeCodeCamp} />
+              Algorithms and Data Structures
+            </FreeCodeCampCertButton>
+          </FreeCodeCampCertButtonWrapper>
           <WriteUpCentered>
             Check out some of my Front End projects below!
           </WriteUpCentered>
