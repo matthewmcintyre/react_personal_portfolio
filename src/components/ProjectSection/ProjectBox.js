@@ -63,7 +63,7 @@ const ProjectInfoButton = styled.div`
 const ProjectImg = styled.img`
   width: 100%;
   display: block;
-  border: 1px solid black;
+  border: 2px solid #8b897b;
   margin-bottom: 10px;
   transition: 1s;
 `;
