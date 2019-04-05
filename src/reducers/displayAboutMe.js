@@ -1,10 +1,12 @@
+import { SHOW_ABOUT } from "../actions/actionTypes";
+
 const initialState = {
   show: false
 };
 
 const displayAboutMe = (state = initialState, action) => {
   switch (action.type) {
-    case "SHOWABOUT":
+    case SHOW_ABOUT:
       return {
         ...state,
         show: true

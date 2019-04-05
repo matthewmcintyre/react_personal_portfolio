@@ -1,3 +1,5 @@
+import { MENU_BURGER_CLICKED } from "../actions/actionTypes";
+
 const initialState = {
   menuopen: false,
   iconhovered: false
@@ -5,7 +7,7 @@ const initialState = {
 
 const headerHandler = (state = initialState, action) => {
   switch (action.type) {
-    case "MENUBURGERCLICKED":
+    case MENU_BURGER_CLICKED:
       return {
         ...state,
         menuopen: !state.menuopen
