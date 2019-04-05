@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
-import { showabout, menuburgerclicked } from "../../actions/Actions";
+import { showAbout, menuBurgerClicked } from "../../actions/actions";
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -180,13 +180,13 @@ class Header extends Component {
     return (
       <Nav menuopen={this.props.menuopen}>
         <MenuWrapper>
-          <MenuBurgerWrapper onClick={() => this.props.menuburgerclicked()}>
+          <MenuBurgerWrapper onClick={this.props.menuBurgerClicked}>
             <LineOne menuopen={this.props.menuopen} />
             <LineTwo menuopen={this.props.menuopen} />
             <LineThree menuopen={this.props.menuopen} />
           </MenuBurgerWrapper>
           <ItemWrapper menuopen={this.props.menuopen}>
-            <Item onClick={() => this.props.showabout()} href="#aboutsection">
+            <Item onClick={this.props.showAbout} href="#aboutsection">
               About Me
             </Item>
             <Item href="#summarysection">Summary</Item>
@@ -220,11 +220,10 @@ class Header extends Component {
 }
 
 const mapStateToProps = state => ({
-  show: state.displayAboutMe.show,
   menuopen: state.headerHandler.menuopen
 });
 
-const myActions = { showabout, menuburgerclicked };
+const myActions = { showAbout, menuBurgerClicked };
 
 export default connect(
   mapStateToProps,
