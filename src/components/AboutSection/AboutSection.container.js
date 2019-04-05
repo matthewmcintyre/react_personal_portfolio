@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
-import { showabout } from "../../actions/Actions";
+import { showAbout } from "../../actions/actions";
 import { connect } from "react-redux";
-import profilepicture from "../../images/profile.png";
+import profilepicture from "../../images/profile-picture.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -170,7 +170,7 @@ class AboutSection extends Component {
             </IntroThree>
           </IntroWrapper>
         </HiddenProfile>
-        <Greeting onClick={() => this.props.showabout()} show={this.props.show}>
+        <Greeting onClick={this.props.showAbout} show={this.props.show}>
           Hi, I'm Matt.
         </Greeting>
         <a href="#summarysection">
@@ -185,7 +185,7 @@ const mapStateToProps = state => ({
   show: state.displayAboutMe.show
 });
 
-const myActions = { showabout };
+const myActions = { showAbout };
 
 export default connect(
   mapStateToProps,
