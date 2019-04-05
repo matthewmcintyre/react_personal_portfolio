@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { scrollhappened } from "../../actions/Actions";
-import { connect } from "react-redux";
-import markdown_previewer from "../../images/markdown previewer.png";
-import product_landing from "../../images/product landing.png";
-import random_quote_machine from "../../images/random quote machine.png";
-import survey_form from "../../images/survey form.png";
-import technical_documentation from "../../images/technical documentation.png";
-import tribute_page from "../../images/tribute page.png";
+import markdown_previewer from "../../images/markdown-previewer.png";
+import product_landing from "../../images/product-landing.png";
+import random_quote_machine from "../../images/random-quote-machine.png";
+import survey_form from "../../images/survey-form.png";
+import technical_documentation from "../../images/technical-documentation.png";
+import tribute_page from "../../images/tribute-page.png";
 import ProjectBox from "./ProjectBox";
 
 //handles section and flexbox
@@ -99,15 +97,4 @@ class SummarySection extends Component {
   }
 }
 
-//fix me later
-const mapStateToProps = state => ({
-  scrolled: state.displaySummary.scrolled
-});
-
-//hmmmm
-const myActions = { scrollhappened };
-
-export default connect(
-  mapStateToProps,
-  myActions
-)(SummarySection);
+export default SummarySection;
