@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { scrollhappened } from "../../actions/Actions";
-import { connect } from "react-redux";
 import SkillBox from "./SkillBox";
 import {
   faLaptopCode,
@@ -195,13 +193,4 @@ class SummarySection extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  scrolled: state.displaySummary.scrolled
-});
-
-const myActions = { scrollhappened };
-
-export default connect(
-  mapStateToProps,
-  myActions
-)(SummarySection);
+export default SummarySection;

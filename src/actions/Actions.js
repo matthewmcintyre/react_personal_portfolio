@@ -1,16 +1,9 @@
-import * as actionTypes from "./ActionTypes";
+import * as actionTypes from "./actionTypes";
 
-export const dosomething = () => ({
-  type: actionTypes.DOSOMETHING
+export const showAbout = () => ({
+  type: actionTypes.SHOW_ABOUT
 });
 
-export const showabout = () => ({
-  type: actionTypes.SHOWABOUT
-});
-
-export const scrollhappened = () => ({
-  type: actionTypes.SCROLLHAPPENED
-});
-export const menuburgerclicked = () => ({
-  type: actionTypes.MENUBURGERCLICKED
+export const menuBurgerClicked = () => ({
+  type: actionTypes.MENU_BURGER_CLICKED
 });
