@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import markdown_previewer from "../../images/markdown-previewer.png";
+
 import product_landing from "../../images/product-landing.png";
 import random_quote_machine from "../../images/random-quote-machine.png";
-import survey_form from "../../images/survey-form.png";
+
 import technical_documentation from "../../images/technical-documentation.png";
-import tribute_page from "../../images/tribute-page.png";
+
 import ProjectBox from "./ProjectBox";
+
+//new project images
+import javascript_calculator from "../../images/javascript-calculator.png";
+import drum_machine from "../../images/drum-machine.png";
+import pomotodo from "../../images/pomotodo.png";
 
 //handles section and flexbox
 const SectionWrapper = styled.section`
@@ -51,10 +56,10 @@ class SummarySection extends Component {
       <SectionWrapper>
         <ProjectsWrapper id="projectsection">
           <ProjectBox
-            src={markdown_previewer}
-            name="Markdown Previewer"
-            stack="HTML/CSS"
-            id="markdown_previewer"
+            src={drum_machine}
+            name="Drum Machine"
+            stack="React/Redux"
+            id="drum_machine"
           />
 
           <ProjectBox
@@ -72,10 +77,10 @@ class SummarySection extends Component {
           />
 
           <ProjectBox
-            src={survey_form}
-            name="Survey Form"
-            stack="HTML/CSS"
-            id="Survey_Form"
+            src={pomotodo}
+            name="Pomotodo"
+            stack="React/Redux"
+            id="Pomotodo"
           />
 
           <ProjectBox
@@ -86,10 +91,10 @@ class SummarySection extends Component {
           />
 
           <ProjectBox
-            src={tribute_page}
-            name="Tribute Page"
-            stack="HTML/CSS"
-            id="Tribute_Page"
+            src={javascript_calculator}
+            name="JavaScript Calculator"
+            stack="React/Redux"
+            id="javascript_calculator"
           />
         </ProjectsWrapper>
       </SectionWrapper>
