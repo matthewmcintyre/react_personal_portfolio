@@ -91,7 +91,7 @@ const ToolboxSkillList = (
 );
 
 const WriteUpContent =
-  "I have structured my learning through freeCodeCamp's Front End Developer Course. In order to complete each certificate I have had to produce a number of projects that adhere to requirements outlined by freeCodeCamp. So far I have earned two Certificates and am close to finishing my third.";
+  "I have structured my learning through freeCodeCamp's Front End Developer Course. In order to complete each certificate I have had to produce a number of projects that adhere to requirements outlined by freeCodeCamp. So far I have earned three Certificates.";
 
 const FreeCodeCampCertButtonWrapper = styled.div`
   display: flex;
@@ -182,6 +182,16 @@ class SummarySection extends Component {
             >
               <FreeCodeCampCertIcon icon={faFreeCodeCamp} />
               Algorithms and Data Structures
+            </FreeCodeCampCertButton>
+            <FreeCodeCampCertButton
+              onClick={() =>
+                window.open(
+                  "https://www.freecodecamp.org/certification/matthewmcintyre/front-end-libraries"
+                )
+              }
+            >
+              <FreeCodeCampCertIcon icon={faFreeCodeCamp} />
+              Front End Libraries
             </FreeCodeCampCertButton>
           </FreeCodeCampCertButtonWrapper>
           <WriteUpCentered>
