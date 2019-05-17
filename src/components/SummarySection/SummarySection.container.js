@@ -25,12 +25,16 @@ const SectionWrapper = styled.section`
 `;
 
 const WriteUpWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-self: center;
   width: 90%;
   background-color: #7b6771;
   padding: 10px;
   border: 3px solid #5a5a5a;
   font-size: 14px;
+  align-items: center;
 
   @media (min-width: 700px) {
     margin: 20px;
@@ -95,7 +99,7 @@ const WriteUpContent =
 
 const FreeCodeCampCertButtonWrapper = styled.div`
   display: flex;
-  width: 100%;
+  width: 80%;
   justify-content: space-evenly;
   padding: 20px 0px;
   flex-direction: column;
