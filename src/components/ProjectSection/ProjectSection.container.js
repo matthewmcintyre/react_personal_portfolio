@@ -1,17 +1,16 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import ProjectBox from "./ProjectBox";
 
+//project images
 import product_landing from "../../images/product-landing.png";
 import random_quote_machine from "../../images/random-quote-machine.png";
-
 import technical_documentation from "../../images/technical-documentation.png";
-
-import ProjectBox from "./ProjectBox";
 
 //new project images
 import javascript_calculator from "../../images/javascript-calculator.png";
-import drum_machine from "../../images/drum-machine.png";
 import pomotodo from "../../images/pomotodo.png";
+import weather_app from "../../images/weather-app.png";
 
 //handles section and flexbox
 const SectionWrapper = styled.section`
@@ -34,7 +33,7 @@ const ProjectsWrapper = styled.div`
   align-content: space-around;
 
   padding: 10px;
-  grid-template-columns: repeat(1, 80%);
+  grid-template-columns: minmax(230px, 400px);
   grid-template-rows: repeat(6, auto);
 
   @media (orientation: landscape) {
@@ -56,10 +55,10 @@ class SummarySection extends Component {
       <SectionWrapper>
         <ProjectsWrapper id="projectsection">
           <ProjectBox
-            src={drum_machine}
-            name="Drum Machine"
-            stack="React/Redux"
-            id="drum_machine"
+            src={weather_app}
+            name="Weather App"
+            stack="JQuery/SASS"
+            id="weather-app"
           />
 
           <ProjectBox
