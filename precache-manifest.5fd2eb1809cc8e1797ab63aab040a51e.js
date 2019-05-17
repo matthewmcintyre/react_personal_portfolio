@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "c951a962fa4a840abdb2",
-    "url": "/static/js/main.53390a7d.chunk.js"
+    "revision": "a9bf7b65f2062935d12a",
+    "url": "/static/js/main.9bb56657.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -32,15 +32,15 @@ self.__precacheManifest = [
     "url": "/static/media/javascript-calculator.6fcc1fee.png"
   },
   {
-    "revision": "c00595daee8aa67deec34afe33cb3f18",
-    "url": "/static/media/drum-machine.c00595da.png"
-  },
-  {
     "revision": "997c8673456a75b71e48ce2a0c414dfc",
     "url": "/static/media/pomotodo.997c8673.png"
   },
   {
-    "revision": "8d34dbe72d6cabaeaff3348a183679c9",
+    "revision": "f0299698370f78b0ff3033ffd2597611",
+    "url": "/static/media/weather-app.f0299698.png"
+  },
+  {
+    "revision": "e1caa8ecdb9cc5dc0d7921ef04c5bce5",
     "url": "/index.html"
   }
 ];
