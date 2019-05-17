@@ -160,14 +160,12 @@ class AboutSection extends Component {
           </ImgWrapper>
           <IntroWrapper>
             <IntroOne show={this.props.show}>
-              Front End Web Developer from New Zealand.
+              Front End Web Developer from Auckland, New Zealand.
             </IntroOne>
             <IntroTwo show={this.props.show}>
-              Self-taught, motivated, and dedicated to improving my skillset.
+              Self-taught, with a passion for all things tech.
             </IntroTwo>
-            <IntroThree show={this.props.show}>
-              Relocated to London and open to all opportunities.
-            </IntroThree>
+            <IntroThree show={this.props.show}>Based in London.</IntroThree>
           </IntroWrapper>
         </HiddenProfile>
         <Greeting onClick={this.props.showAbout} show={this.props.show}>
